@@ -82,6 +82,21 @@ const page = () => {
             Format the private key correctly in the{" "}
             <code className="bg-slate-300">.env</code> file.
           </li>
+          <li>
+            Run{" "}
+            <code className=" bg-slate-300 p-1">
+              cp .firebase.ts.example .firebase.ts
+            </code>{" "}
+            in your project root.
+          </li>
+          <li>
+            Now, in the general project settings on firebase, scroll down to
+            find the firebaseConfig. Copy that{" "}
+            <code className="bg-slate-300">
+              const firebaseConfig = ${`{...}`}{" "}
+            </code>
+            and paste that in your firebase.ts file.
+          </li>
         </ol>
       </div>
 

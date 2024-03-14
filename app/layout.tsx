@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import SessionProvider from "@/components/SessionProvider";
 import { getServerSession } from "next-auth";
 import authOptions from "@/auth";
+import FirebaseAuthProvider from "@/components/FirebaseAuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,8 +25,10 @@ export default async function RootLayout({
     <SessionProvider session={session}>
       <html lang="en">
         <body className={inter.className}>
-          <Header />
-          {children}
+          <FirebaseAuthProvider>
+            <Header />
+            {children}
+          </FirebaseAuthProvider>
         </body>
       </html>
     </SessionProvider>

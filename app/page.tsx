@@ -123,12 +123,14 @@ export default function Home() {
                   cp .env.example .env
                 </pre>{" "}
                 <br />
-                Replace the placholder values with your newly setup google cloud
-                and firebase configs.
               </li>
               <li>
-                Create a <code>firebase.ts</code> file with Firebase
-                initialization and configuration.
+                Create a <code>firebase.ts</code> file <br />
+                <pre className="bg-gray-300 p-2  mt-2">
+                  cp .firebase.ts.example .firebase.ts
+                </pre>{" "}
+                <br /> Replace the placholder values with your newly setup
+                google cloud and firebase configs.
               </li>
             </ol>
             <p className="mt-2">

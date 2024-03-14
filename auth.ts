@@ -11,18 +11,18 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    // session: async ({ session, token }) => {
-    //   if (session?.user) {
-    //     if (token.sub) {
-    //       session.user.id = token.sub;
+    session: async ({ session, token }) => {
+      if (session?.user) {
+        if (token.sub) {
+          session.user.id = token.sub;
 
-    //       const firebaseToken = await adminAuth.createCustomToken(token.sub);
-    //       session.firebaseToken = firebaseToken;
-    //     }
-    //   }
+          const firebaseToken = await adminAuth.createCustomToken(token.sub);
+          session.firebaseToken = firebaseToken;
+        }
+      }
 
-    //   return session;
-    // },
+      return session;
+    },
 
     jwt: async ({ user, token }) => {
       if (user) {
