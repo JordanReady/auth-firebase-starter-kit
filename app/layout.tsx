@@ -25,10 +25,10 @@ export default async function RootLayout({
     <SessionProvider session={session}>
       <html lang="en">
         <body className={inter.className}>
-          <FirebaseAuthProvider>
-            <Header />
-            {children}
-          </FirebaseAuthProvider>
+          {/* <FirebaseAuthProvider> */}
+          <Header />
+          {children}
+          {/* </FirebaseAuthProvider> */}
         </body>
       </html>
     </SessionProvider>
