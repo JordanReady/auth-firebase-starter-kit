@@ -115,6 +115,32 @@ const page = () => {
           <code className="bg-slate-300">ctrl + /</code>
           then <code className="bg-slate-300">ctrl + s</code>
         </p>
+        <p>
+          Uncomment the FirebaseAuthProvider component wrapper in the{" "}
+          <code>layout.tsx</code> file.
+        </p>
+        <p>
+          Open <code className="bg-slate-300">layout.tsx</code> then uncomment
+          line 28 and 31.
+        </p>
+        <p>
+          Turn this: <br />
+          <code>{`{/* <FirebaseAuthProvider> */}`}</code> <br />
+          <code className="ml-10">{`<Header />`}</code>
+          <br />
+          <code className="ml-10">{`{children}`}</code>
+          <br />
+          <code className="">{`{/* </FirebaseAuthProvider> */}`}</code>
+        </p>
+        <p>
+          To this: <br />
+          <code>{` <FirebaseAuthProvider> `}</code> <br />
+          <code className="ml-10">{`<Header />`}</code>
+          <br />
+          <code className="ml-10">{`{children}`}</code>
+          <br />
+          <code className="">{` </FirebaseAuthProvider> `}</code>
+        </p>
       </div>
 
       {/* Sub-step 5 */}
