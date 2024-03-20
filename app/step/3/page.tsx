@@ -85,7 +85,7 @@ const page = () => {
           <li>
             Run{" "}
             <code className=" bg-slate-300 p-1">
-              cp .firebase.ts.example .firebase.ts
+              cp firebase.ts.example firebase.ts
             </code>{" "}
             in your project root.
           </li>
