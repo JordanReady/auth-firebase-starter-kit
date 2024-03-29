@@ -81,6 +81,7 @@ const page = () => {
             For Scopes, click "Add or remove scopes" and select the top 3 for
             the bare minimum user data. Click update at the bottom.
           </li>
+          <li>You can add yourself as a test user if you'd like.</li>
           <li>Save and continue.</li>
         </ol>
       </div>
@@ -93,7 +94,6 @@ const page = () => {
         <p>Follow these steps to set up the OAuth consent screen:</p>
         <ol className="list-decimal pl-4 mt-2">
           <li>Navigate to "APIs & Services" {">"} "Credentials".</li>
-          <li>Set user type to external, then create.</li>
           <li>
             Click the "+ CREATE CREDENTIALS" button at the top of the page.
           </li>

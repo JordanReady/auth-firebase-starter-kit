@@ -34,12 +34,9 @@ const page = () => {
         </p>
         <ol className="list-decimal pl-4 mt-2">
           <li>
-            Run <code className=" bg-slate-300 p-1">cp .env.example .env</code>{" "}
-            in your project root.
-          </li>
-          <li>
-            Open the <code className="bg-slate-300">.env</code> file and fill in
-            the required information.
+            In your project's root directory, run the following command in your
+            terminal:
+            <code className="bg-slate-300 p-1">cp .env.example .env</code>
           </li>
         </ol>
       </div>
@@ -47,26 +44,7 @@ const page = () => {
       {/* Sub-step 2 */}
       <div className="bg-gray-200 p-4  mb-4">
         <h2 className="text-xl font-semibold mb-2">
-          Sub-step 2: Obtain Google API credentials
-        </h2>
-        <p>Retrieve Google API credentials for your app:</p>
-        <ol className="list-decimal pl-4 mt-2">
-          <li>
-            Go to the Google Cloud Console and navigate to APIs & Services {">"}{" "}
-            Credentials.
-          </li>
-          <li>Under OAuth 2.0 Client IDs, download the credentials file.</li>
-          <li>
-            Copy the Client ID and Client Secret into your{" "}
-            <code className="bg-slate-300">.env</code> file.
-          </li>
-        </ol>
-      </div>
-
-      {/* Sub-step 3 */}
-      <div className="bg-gray-200 p-4  mb-4">
-        <h2 className="text-xl font-semibold mb-2">
-          Sub-step 3: Configure Firebase settings
+          Sub-step 2: Configure Firebase settings
         </h2>
         <p>Set up Firebase credentials for your project:</p>
         <ol className="list-decimal pl-4 mt-2">
@@ -89,21 +67,13 @@ const page = () => {
             </code>{" "}
             in your project root.
           </li>
-          <li>
-            Now, in the general project settings on firebase, scroll down to
-            find the firebaseConfig. Copy that{" "}
-            <code className="bg-slate-300">
-              const firebaseConfig = ${`{...}`}{" "}
-            </code>
-            and paste that in your firebase.ts file.
-          </li>
         </ol>
       </div>
 
-      {/* Sub-step 4 */}
+      {/* Sub-step 3 */}
       <div className="bg-gray-200 p-4  mb-4">
         <h2 className="text-xl font-semibold mb-2">
-          Sub-step 4: Enable Firebase Admin
+          Sub-step 3: Enable Firebase Admin
         </h2>
         <p>
           Uncomment the Firebase Admin initialization in the{" "}
@@ -143,9 +113,9 @@ const page = () => {
         </p>
       </div>
 
-      {/* Sub-step 5 */}
+      {/* Sub-step 4 */}
       <div className="bg-gray-200 p-4  mb-4">
-        <h2 className="text-xl font-semibold mb-2">Sub-step 5: Test login</h2>
+        <h2 className="text-xl font-semibold mb-2">Sub-step 4: Test login</h2>
         <p>
           Save the changes and restart the development server to test the login
           functionality.

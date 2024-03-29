@@ -60,9 +60,9 @@ const page = () => {
             Ignore the npm install firebase command, as it comes preinstalled.
           </li>
           <li>
-            Create a <code className="bg-slate-300">firebase.ts</code> file in
-            your root directory and paste the code provided by Firebase under
-            the install command.
+            Copy the provided `firebaseConfig` object and paste it into your
+            `firebase.ts.example` file. Replace the placeholder values in the
+            example file with the actual values provided.
           </li>
         </ol>
       </div>
@@ -78,7 +78,10 @@ const page = () => {
           <li>
             For sign-in providers, select Google, enable it, and press save.
           </li>
-          <li>Return to the project overview.</li>
+          <li>
+            Return to the project overview by clicking the home icon in the left
+            sidebar.
+          </li>
         </ol>
       </div>
 
