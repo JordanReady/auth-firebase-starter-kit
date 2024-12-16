@@ -10,7 +10,7 @@ import FirebaseAuthProvider from "@/components/FirebaseAuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Next/OAuth/Firebase Starter Kit",
+  title: "OTMS | Theme Creator",
   description:
     "Starter kit that has step by step easy to follow instructions to help you configure your next project with authentication and a database ready to go!",
 };
@@ -26,7 +26,7 @@ export default async function RootLayout({
       <html lang="en">
         <body className={inter.className}>
           {/* <FirebaseAuthProvider> */}
-          <Header />
+          {/* <Header /> */}
           {children}
           {/* </FirebaseAuthProvider> */}
         </body>

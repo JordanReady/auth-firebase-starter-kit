@@ -1,56 +1,28 @@
-import type { FunctionalComponent } from 'preact';
-import '../konami.scss';
+import "../konami.scss";
 
-type LookupDialogProps = {
-  lookupSelection: string;
-  aspectRatio: string;
-  customLogoURL: string;
-  onClose: () => void;
-  onLookupTypeChange: (type: string) => void;
-  LookupTitle: string;
-  LookupPrompt: string;
+type Props = {
   animate: string;
 };
 
-export const LookupDialog: FunctionalComponent<LookupDialogProps> = ({ onClose, onLookupTypeChange, lookupSelection, aspectRatio, customLogoURL, LookupTitle, LookupPrompt, animate }) => {
+export default function LookupDialog({ animate }: Props) {
   return (
     <div className="custom-dialog-backdrop">
-      <div className={`custom-dialog ${animate === 'true' ? 'animate' : ''}`}>
-        {customLogoURL !== 'default' && <div class={`custom-logo-${aspectRatio}`} style={{ backgroundImage: `url('${customLogoURL}')`, backgroundSize: '100% 100%' }}></div>}
-
+      <div className={`custom-dialog ${animate === "true" ? "animate" : ""}`}>
         <div className="custom-dialog-header">
-          <h2>{LookupTitle}</h2>
+          <h2>Player Account Lookup</h2>
         </div>
         <div className="custom-dialog-content">
-          <p>{LookupPrompt}</p>
+          <p>Please select how you want to look up your account:</p>
           <div className="lookup-options">
-            {(lookupSelection === 'card' || lookupSelection === 'cardPhone' || lookupSelection === 'cardPatronID' || lookupSelection === 'cardPhonePatronID') && (
-              <button className="lookup-button" onClick={() => onLookupTypeChange('Card')}>
-                Swipe Card
-              </button>
-            )}
-
-            {(lookupSelection === 'phone' || lookupSelection === 'cardPhone' || lookupSelection === 'cardPhonePatronID' || lookupSelection === 'phonePatronID') && (
-              <button className="lookup-button" onClick={() => onLookupTypeChange('Phone')}>
-                Phone Number
-              </button>
-            )}
-
-            {(lookupSelection === 'PatronID' || lookupSelection === 'cardPatronID' || lookupSelection === 'cardPhonePatronID' || lookupSelection === 'phonePatronID') && (
-              <button className="lookup-button" onClick={() => onLookupTypeChange('Patron')}>
-                Patron ID
-              </button>
-            )}
+            <button className="lookup-button">Swipe Card</button>
+            <button className="lookup-button">Phone Number</button>
+            <button className="lookup-button">Patron ID</button>
           </div>
         </div>
         <div className="custom-dialog-actions">
-          <button className="dialog-button cancel-button" onClick={onClose}>
-            Cancel
-          </button>
+          <button className="dialog-button cancel-button">Cancel</button>
         </div>
       </div>
     </div>
   );
-};
-
-export default LookupDialog;
+}

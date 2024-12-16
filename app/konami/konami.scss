@@ -1,15 +1,15 @@
 /* Color Themes: Uncomment the desired theme to change the appearance of the page */
 :root {
-  --accent-color: #0077b6;
-  --background-color: #1b2a3f;
-  --button-active-background: #005f73;
-  --button-background: linear-gradient(145deg, #0096c7, #00b4d8);
-  --button-border-color: #0096c7;
-  --button-hover-background: linear-gradient(145deg, #0077b6, #023e8a);
+  --background-color: #ffffff;
+  --accent-color: grey;
+  --text-color: grey;
+  --button-background: linear-gradient(145deg, #ff6b81, #e63946);
+  --button-hover-background: linear-gradient(145deg, #ff1744, #ff5252);
+  --button-active-background: linear-gradient(145deg, #ff6b81, #e63946);
+  --button-border-color: #ff1744;
   --button-text-color: #ffffff;
-  --shadow-color: rgba(0, 150, 199, 0.4);
-  --text-color: #ffffff;
-  --scale: 1;
+  --shadow-color: rgba(255, 23, 68, 0.3);
+  --scale: 0.8;
 }
 
 $background-color: var(--background-color);
@@ -56,7 +56,8 @@ $scale: var(--scale);
     color: $text-color;
     font-weight: 700;
     text-transform: uppercase;
-    text-shadow: -1px -1px 0 $accent-color, 1px -1px 0 $accent-color, -1px 1px 0 $accent-color, 1px 1px 0 $accent-color;
+    text-shadow: -1px -1px 0 $accent-color, 1px -1px 0 $accent-color,
+      -1px 1px 0 $accent-color, 1px 1px 0 $accent-color;
   }
 
   p {
@@ -83,19 +84,23 @@ $scale: var(--scale);
       cursor: pointer;
       width: 100%;
       max-height: max-content;
-      box-shadow: 0 6px 12px $shadow-color, inset 0 1px 1px rgba(255, 255, 255, 0.2);
-      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 12px $shadow-color,
+        inset 0 1px 1px rgba(255, 255, 255, 0.2);
+      transition: background 0.3s ease, transform 0.3s ease,
+        box-shadow 0.3s ease;
 
       &:hover {
         background: $button-hover-background;
         transform: translateY(-4px);
-        box-shadow: 0 8px 16px $shadow-color, inset 0 1px 1px rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 16px $shadow-color,
+          inset 0 1px 1px rgba(255, 255, 255, 0.2);
       }
 
       &:active {
         background: $button-active-background;
         transform: translateY(2px);
-        box-shadow: 0 4px 8px $shadow-color, inset 0 1px 1px rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 8px $shadow-color,
+          inset 0 1px 1px rgba(255, 255, 255, 0.2);
       }
     }
   }
@@ -128,7 +133,7 @@ $scale: var(--scale);
 
 /* Optional glowing animation around the container */
 .konami-payment-container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -10px;
   left: -10px;
@@ -236,6 +241,171 @@ $scale: var(--scale);
   justify-content: center;
   flex-direction: column;
   z-index: 1000;
+  width: 40dvw;
+}
+
+.gradient-container {
+  z-index: 1000;
+}
+
+.theme-picker {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.css-variable-box {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: start;
+  justify-items: center;
+  background-color: #2c2c2c;
+  padding: 0.25rem;
+  border-radius: 5px;
+  border: 1px solid #444;
+  font-size: 0.9rem;
+  color: whitesmoke;
+  text-align: center;
+  .variable-name {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .color-preview {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 0.5rem;
+  }
+
+  .gradient-button {
+    background-color: linear-gradient(145deg, #ff6b81, #e63946);
+    border-radius: 5px;
+    padding: 0.5rem;
+    border: 1px solid #444;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  .slider-container {
+    display: flex;
+  }
+
+  .percent-slider {
+    margin: 0 1rem;
+  }
+
+  .degree-slider {
+    margin: 0 1rem;
+  }
+
+  input[type="range"] {
+    width: 100%;
+  }
+
+  .input {
+    opacity: 0;
+    width: 100%;
+    height: 40px;
+    border: 1px solid black;
+  }
+  /* Custom classes for each input field */
+  .background-color {
+    background: var(--background-color);
+  }
+
+  .accent-color {
+    background: var(--accent-color);
+  }
+
+  .text-color {
+    background: var(--text-color);
+  }
+
+  .button-background {
+    background: var(--button-background);
+  }
+
+  .button-hover-background {
+    background: var(--button-hover-background);
+  }
+
+  .button-active-background {
+    background: var(--button-active-background);
+  }
+
+  .button-border-color {
+    background: var(--button-border-color);
+  }
+
+  .button-text-color {
+    background: var(--button-text-color);
+  }
+
+  .shadow-color {
+    background: var(--shadow-color);
+  }
+
+  .value-display {
+    font-size: 0.8rem;
+    color: #ddd;
+    word-break: break-all;
+    margin-bottom: 0.5rem;
+  }
+
+  input[type="color"],
+  input[type="text"] {
+    // Display these if you need them for interaction
+    // or set to display:none if the user should not see them directly
+    margin-top: 0.5rem;
+  }
+}
+
+.theme-picker-container {
+  background-color: #353536;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  width: 60dvw;
+  text-align: center;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.dialog-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: whitesmoke;
+}
+
+.dialog-picker {
+  margin-bottom: 1rem;
+}
+
+.dialog-switch-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.dialog-switch-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(145deg, #ff6b81, #e63946);
+  color: $button-text-color;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $button-hover-background;
+  }
 }
 
 .custom-dialog {
@@ -279,7 +449,8 @@ $scale: var(--scale);
   color: $text-color;
   font-weight: 700;
   text-transform: uppercase;
-  text-shadow: -1px -1px 0 $accent-color, 1px -1px 0 $accent-color, -1px 1px 0 $accent-color, 1px 1px 0 $accent-color;
+  text-shadow: -1px -1px 0 $accent-color, 1px -1px 0 $accent-color,
+    -1px 1px 0 $accent-color, 1px 1px 0 $accent-color;
 }
 
 .custom-dialog-content {
@@ -397,7 +568,13 @@ $scale: var(--scale);
 
 .card-line {
   height: 20px;
-  background: repeating-linear-gradient(90deg, #000, #000 20px, #fff 10px, #fff 20px);
+  background: repeating-linear-gradient(
+    90deg,
+    #000,
+    #000 20px,
+    #fff 10px,
+    #fff 20px
+  );
   width: 80%;
   border-radius: 4px;
 }
@@ -441,7 +618,7 @@ $scale: var(--scale);
 
 /* Add overlay to make it more secure */
 .blured::after {
-  content: 'Sensitive information - hold button to reveal';
+  content: "Sensitive information - hold button to reveal";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -476,6 +653,7 @@ $scale: var(--scale);
 
 .dialog-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
   margin-top: 15px;

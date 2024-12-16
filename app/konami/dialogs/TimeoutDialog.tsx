@@ -1,16 +1,12 @@
-import type { FunctionalComponent } from 'preact';
-import { useEffect, useState } from 'preact/compat';
-import '../konami.scss';
+"use client";
+import { useEffect, useState } from "react";
+import "../konami.scss";
 
-type TimeoutDialogProps = {
-  onContinue: Function;
-  onTimeout: Function;
-  timeoutTitle?: string;
-  timeoutPrompt?: string;
+type Props = {
   animate: string;
 };
 
-export const TimeoutDialog: FunctionalComponent<TimeoutDialogProps> = ({ onContinue, onTimeout, timeoutTitle, timeoutPrompt, animate }) => {
+export default function TimeoutDialog({ animate }: Props) {
   const [timeLeft, setTimeLeft] = useState(10);
 
   useEffect(() => {
@@ -18,7 +14,6 @@ export const TimeoutDialog: FunctionalComponent<TimeoutDialogProps> = ({ onConti
       if (timeLeft > 0) {
         setTimeLeft(timeLeft - 1);
       } else {
-        onTimeout();
       }
     }, 1000);
 
@@ -27,20 +22,20 @@ export const TimeoutDialog: FunctionalComponent<TimeoutDialogProps> = ({ onConti
 
   return (
     <div className="custom-dialog-backdrop">
-      <div className={`custom-dialog ${animate === 'true' ? 'animate' : ''}`}>
+      <div className={`custom-dialog ${animate === "true" ? "animate" : ""}`}>
         <div className="custom-dialog-header">
-          <h2>{timeoutTitle}</h2>
+          <h2>Yooo, You Still there?</h2>
         </div>
         <div className="custom-dialog-content">
           <p>
-            Your session will timeout in {timeLeft} seconds due to inactivity. {timeoutPrompt}
+            Your session will timeout in {timeLeft} seconds due to inactivity.
+            Please continue to use the app.
           </p>
         </div>
         <div className="custom-dialog-actions">
           <button
             className="dialog-button full"
             onClick={() => {
-              onContinue();
               setTimeLeft(30);
             }}
           >
@@ -50,6 +45,4 @@ export const TimeoutDialog: FunctionalComponent<TimeoutDialogProps> = ({ onConti
       </div>
     </div>
   );
-};
-
-export default TimeoutDialog;
+}
